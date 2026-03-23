@@ -26,8 +26,8 @@ document.addEventListener("DOMContentLoaded", () => {
           <p><strong>Schedule:</strong> ${details.schedule}</p>
           <p><strong>Availability:</strong> ${spotsLeft} spots left</p>
           <p><strong>Participants:</strong></p>
-          <ul style="list-style-type: none; margin-left: 0; padding-left: 0; margin-bottom: 10px;">
-            ${details.participants.length > 0 ? details.participants.map(email => `<li style="margin-bottom: 5px;">${email} <button onclick="removeParticipant('${name}', '${email}')" style="background: none; border: none; color: red; cursor: pointer; font-size: 16px;">×</button></li>`).join('') : '<li>No participants yet</li>'}
+          <ul class="participants-list">
+            ${details.participants.length > 0 ? details.participants.map(email => `<li>${email} <button class="remove-participant-btn" onclick="removeParticipant('${name}', '${email}')">×</button></li>`).join('') : '<li>No participants yet</li>'}
           </ul>
         `;
 
